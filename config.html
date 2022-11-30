@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style-config.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <link rel="manifest" href="media/site.webmanifest">
+    <title>config</title>
+  </head>
+  <body>
+    <div id="config">
+      <h2>Configuration:</h2>
+      <br />
+      <form method="get" action="index.html">
+        <label for="color">Choose a color:</label>
+        <br />
+        <input type="color" name="color" id="color" />
+        <br />
+        <br />
+        <label for="font">Choose a font-family:</label>
+
+        <select name="font" id="font">
+          <option value="Arial">Ariel</option>
+          <option value="Verdana ">Verdana</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia ">Georgia</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+        <br />
+        <br />
+        <p><b>Select a mode:</b></p>
+        <label class="lab" for="dark">Dark</label>
+        <input type="radio" id="dark" name="mode" value="dark" />&nbsp;&nbsp;&nbsp;
+        <label class="lab" for="light">Light</label>
+        <input type="radio" id="light" name="mode" value="light" />
+        <br />
+        <br />
+        <input id="butn" type="submit" value="Submit">&nbsp;&nbsp;&nbsp;
+        <input id="butn" type="reset" value="Reset">
+      </form>
+    </div>
+  </body>
+</html>

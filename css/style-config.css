@@ -1,0 +1,32 @@
+#config {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#config form {
+  text-align: center;
+}
+#config form .lab {
+  font-weight: normal;
+}
+#config form #butn {
+  height: 35px;
+  width: 70px;
+}
+
+.help {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style-config.css.map */

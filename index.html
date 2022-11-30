@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <link rel="manifest" href="media/site.webmanifest">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+      <div class="operation">
+        <div class="operHead"><img src="media/history.svg" alt="History" id="opLog">&nbsp;<h4>Operation's Log</h4></div>
+        <div id="operScreen"></div>
+      </div>
+      <div class="display">
+        <div class="top-display">
+          <button type="button" id ="info" value="info" class="symbol"><img src="media/info.svg" alt="Info" class="icons"></button>
+          <button type="button" id ="mycalc" value="mycalc" class="symbol">My Calculator</button>
+          <button type="button" id ="settings" value="settings" class="symbol"><a href="config.html"><img src="media/settings.svg" alt="Settings" class="icons"></button></a>
+
+          <button type="button" id ="light" value="light" class="symbol"><img src="media/light.svg" alt="Lights" class="lights"></button>
+          <div id="result" class="calculator-screen"></div>
+          <button type="button" id ="back" value="back" class="symbol"><img src="media/back.svg" alt="Back" class="icons"></button>
+
+          <button type="button" id ="clock" value="history" class="symbol"><img src="media/history.svg" alt="History" class="icons"></button>
+          <button type="button" class="all-clear" value="all-clear" class="symbol">C</button>
+          <button type="button" id="divide" value="/" class="operator">&divide;</button>
+
+        </div>
+        <div class="calculator-keys">
+          <button type="button" id="plus" class="operator" value="+">+</button>
+          <button type="button" id="minus" class="operator" value="-">-</button>
+          <button type="button" id="times" class="operator" value="*">&times;</button>
+          <button type="button" id="plusminus" class="operator" value="+-">&plusmn;</button>
+          <button type="button" id="nthroot" class="symbol" value="nthRoot"><img src="media/nthRoot.svg" alt="nthRoot" class="icons"></button>
+      
+          <button type="button" id="seven" class="number" value="7">7</button>
+          <button type="button" id="eight" class="number" value="8">8</button>
+          <button type="button" id="nine" class="number" value="9">9</button>
+          
+          
+      
+          <button type="button" id="four" class="number" value="4">4</button>
+          <button type="button" id="five" class="number" value="5">5</button>
+          <button type="button" id="six" class="number" value="6">6</button>
+            
+      
+          <button type="button" id="one" class="number" value="1">1</button>
+          <button type="button" id="two" class="number" value="2">2</button>
+          <button type="button" id="three" class="number" value="3">3</button>
+      
+      
+          <button type="button" id="zero" class="number" value="0">0</button>
+          <button type="button" value=""></button>
+          <button type="button" value=""></button>
+          <button type="button" id ="cloud" value="cloud"><img src="media/cloud.png" alt="Cloud" class="icons"></button>
+          <button type="button" id ="decimal" class="decimal" value=".">.</button>
+      
+          <button type="button" class="equal-sign" value="=">=</button>
+      
+        </div>
+      </div>
+      <div class="scientific">
+        <div class="scientificHead"><img src="media/nthRoot.svg" alt="nthRoot" id="scLog">&nbsp;<h4>Scientific</h4></div>
+        <div id="scientificScreen"></div>
+        <div id="scGrid">
+          <button type="button" class="scBtn" id="power2"><img src="media/power2.svg" alt="Power" id="power2" class="scIcons"></button>
+          <button type="button" class="scBtn" id="rootn"><img src="media/root.svg" alt="Root" id="rootn" class="scIcons"></button>
+          <button type="button" class="scBtn" id="powery"><img src="media/powery.svg" alt="PowerByY" id="powery" class="scIcons"></button>
+          <button type="button" class="scBtn" id="rooty"><img src="media/rooty.svg" alt="RootByY"  id="rooty" class="scIcons"></button>
+          <button type="button" class="operator" value="%" id="mod">%</button>
+          <button type="button" class="scBtn" id="pi">Pi</button>
+        </div>
+        <div id="base">Base</div>
+      </div>
+      <div id="popup">
+        
+      </div>
+    </div>
+    <script src="js/calculator.js"></script>
+    <script src="js/application.js"></script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+body .icons {
+  width: 24px;
+  height: 24px;
+}
+body #popup {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+}
+body .calculator {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .calculator .top-display {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+}
+body .calculator .top-display .calculator-screen {
+  width: 240px;
+  font-size: 2rem;
+  vertical-align: middle;
+  line-height: 50px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: azure;
+  color: black;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+body .calculator .calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+body .calculator .calculator-keys #times {
+  grid-area: 1/5;
+}
+body .calculator .calculator-keys #minus {
+  grid-area: 2/5;
+}
+body .calculator .calculator-keys #plus {
+  grid-area: 3/5;
+}
+body .calculator .calculator-keys .equal-sign {
+  grid-area: 4/5;
+}
+body .calculator .calculator-keys #nthroot {
+  grid-area: 1/1;
+}
+body .calculator .calculator-keys #cloud {
+  grid-area: 2/1;
+}
+body .calculator .calculator-keys #seven {
+  background-color: snow;
+  grid-area: 1/2;
+}
+body .calculator .calculator-keys #seven:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #seven:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #eight {
+  background-color: snow;
+  grid-area: 1/3;
+}
+body .calculator .calculator-keys #eight:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #eight:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #nine {
+  background-color: snow;
+  grid-area: 1/4;
+}
+body .calculator .calculator-keys #nine:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #nine:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #plusminus {
+  grid-area: 4/2;
+}
+body .calculator .calculator-keys #zero {
+  background-color: snow;
+  grid-area: 4/3;
+}
+body .calculator .calculator-keys #zero:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #zero:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys .decimal {
+  background-color: snow;
+  grid-area: 4/4;
+}
+body .calculator .calculator-keys .decimal:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys .decimal:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #four, body .calculator .calculator-keys #five, body .calculator .calculator-keys #six {
+  background-color: snow;
+}
+body .calculator .calculator-keys #four:hover, body .calculator .calculator-keys #five:hover, body .calculator .calculator-keys #six:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #four:active, body .calculator .calculator-keys #five:active, body .calculator .calculator-keys #six:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #one {
+  background-color: snow;
+  grid-area: 3/2;
+}
+body .calculator .calculator-keys #one:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #one:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #two {
+  background-color: snow;
+  grid-area: 3/3;
+}
+body .calculator .calculator-keys #two:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #two:active {
+  background-color: darksalmon;
+}
+body .calculator .calculator-keys #three {
+  background-color: snow;
+  grid-area: 3/4;
+}
+body .calculator .calculator-keys #three:hover {
+  background-color: #eaeaea;
+}
+body .calculator .calculator-keys #three:active {
+  background-color: #e9967a;
+}
+body .calculator button {
+  height: 50px;
+  background-color: aliceblue;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  font-size: 1.5rem;
+  color: #333;
+  background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0, 0, 0, 0.04));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 0 rgba(255, 255, 255, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+}
+body .calculator button:hover {
+  background-color: #eaeaea;
+}
+body .calculator button:active {
+  background-color: darksalmon;
+}
+body .operation {
+  display: none;
+  grid-template-rows: 1fr 6fr;
+  background-color: whitesmoke;
+}
+body .scientific {
+  display: none;
+  grid-template-rows: 1fr 6fr;
+  background-color: honeydew;
+}
+
+body.dark-mode .calculator .calculator-keys #seven {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #seven:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #seven:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #eight {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #eight:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #eight:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #nine {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #nine:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #nine:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #zero {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #zero:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #zero:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys .decimal {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys .decimal:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys .decimal:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #four, body.dark-mode .calculator .calculator-keys #five, body.dark-mode .calculator .calculator-keys #six {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #four:hover, body.dark-mode .calculator .calculator-keys #five:hover, body.dark-mode .calculator .calculator-keys #six:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #four:active, body.dark-mode .calculator .calculator-keys #five:active, body.dark-mode .calculator .calculator-keys #six:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #one {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #one:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #one:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #two {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #two:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #two:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator .calculator-keys #three {
+  background-color: slategrey;
+}
+body.dark-mode .calculator .calculator-keys #three:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator .calculator-keys #three:active {
+  background-color: darksalmon;
+}
+body.dark-mode .calculator button {
+  border-color: #2d3441;
+  background-color: dimgray;
+  color: white;
+  text-shadow: none;
+}
+body.dark-mode .calculator button:hover {
+  background-color: #A1A1A1;
+}
+body.dark-mode .calculator button:active {
+  background-color: darksalmon;
+}
+body.dark-mode .operation {
+  background-color: #8b8282;
+}
+body.dark-mode .scientific {
+  background-color: rgb(86, 114, 92);
+}
+
+body.light-mode .calculator .top-display .calculator-screen {
+  background-color: gold;
+  color: black;
+}
+body.light-mode #light {
+  background-color: #FFDAB9;
+}
+
+.dark-mode.light-mode #light {
+  background-color: #D2691E;
+}
+
+.dark-mode.scientific-mode .calculator #nthroot {
+  background-color: #D2691E;
+}
+.dark-mode.scientific-mode .scientific #scGrid #mod {
+  background-color: rgb(86, 114, 92);
+  color: black;
+}
+.dark-mode.scientific-mode .scientific #scGrid #mod:hover {
+  background-color: #A1A1A1;
+}
+.dark-mode.scientific-mode .scientific #scGrid #mod:active {
+  background-color: darksalmon;
+}
+.dark-mode.scientific-mode .scientific #scGrid .scBtn {
+  border-color: #2d3441;
+  background-color: dimgray;
+  text-shadow: none;
+  background-color: rgb(86, 114, 92);
+}
+.dark-mode.scientific-mode .scientific #scGrid .scBtn:hover {
+  background-color: #A1A1A1;
+}
+.dark-mode.scientific-mode .scientific #scGrid .scBtn:active {
+  background-color: darksalmon;
+}
+
+.scientific-mode #popup {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  width: 550px;
+}
+.scientific-mode .calculator {
+  display: grid;
+  width: 551px;
+  grid-template-columns: 400px 149px;
+}
+.scientific-mode .calculator #nthroot {
+  background-color: #FFDAB9;
+}
+.scientific-mode .scientific {
+  display: grid;
+  height: 350px;
+  grid-template-rows: 1fr 2fr 3fr 1fr;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.scientific-mode .scientific #base {
+  margin-top: 10%;
+  text-align: center;
+}
+.scientific-mode .scientific #scLog {
+  height: 20px;
+  width: 20px;
+}
+.scientific-mode .scientific .scientificHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.scientific-mode .scientific #scGrid {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.scientific-mode .scientific #scGrid .scIcons {
+  width: 24px;
+  height: 24px;
+}
+.scientific-mode .scientific #scGrid #mod {
+  background-color: honeydew;
+}
+.scientific-mode .scientific #scGrid #mod:hover {
+  background-color: #eaeaea;
+}
+.scientific-mode .scientific #scGrid #mod:active {
+  background-color: darksalmon;
+}
+.scientific-mode .scientific #scGrid .scBtn {
+  height: 50px;
+  background-color: honeydew;
+  border-radius: 3px;
+  border: 1px solid #b8b8b8;
+  font-size: 1.5rem;
+  color: #333;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 0 rgba(255, 255, 255, 0.15), 0 1px 0 0 rgba(255, 255, 255, 0.15);
+  text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+}
+.scientific-mode .scientific #scGrid .scBtn:hover {
+  background-color: #eaeaea;
+}
+.scientific-mode .scientific #scGrid .scBtn:active {
+  background-color: darksalmon;
+}
+.scientific-mode .scientific #scGrid .scBtn #power2, .scientific-mode .scientific #scGrid .scBtn #powery, .scientific-mode .scientific #scGrid .scBtn #rootn, .scientific-mode .scientific #scGrid .scBtn #rooty, .scientific-mode .scientific #scGrid .scBtn #pi {
+  background-image: linear-gradient(to bottom, transparent, transparent 100%, rgba(0, 0, 0, 0.04));
+}
+
+.history-mode #popup {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  width: 650px;
+}
+.history-mode .calculator {
+  display: grid;
+  width: 650px;
+  grid-template-columns: 249px 400px;
+}
+.history-mode .calculator #clock {
+  background-color: #FFDAB9;
+}
+.history-mode .operation {
+  display: grid;
+  height: 350px;
+  grid-template-rows: 1fr 6fr;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.history-mode .operation #opLog {
+  height: 16px;
+  width: 16px;
+}
+.history-mode .operation #operScreen {
+  width: 249px;
+  height: 278px;
+  overflow: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+.history-mode .operation .operHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.scientific-mode.history-mode #popup {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 800px;
+}
+.scientific-mode.history-mode .calculator {
+  display: grid;
+  width: 800px;
+  grid-template-columns: 249px 400px 149px;
+}
+
+.dark-mode.history-mode #clock {
+  background-color: #D2691E;
+}
+
+#result {
+  white-space: pre;
+}
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas: "display" "operation" "scientific";
+  }
+  .scientific {
+    grid-area: scientific;
+    height: 100%;
+    margin-top: 0;
+  }
+  .display {
+    height: auto; /* fix*/
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
